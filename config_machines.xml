@@ -120,12 +120,23 @@ This allows using a different mpirun command to launch unit tests -->
     <mpirun mpilib="default">
       <executable>mpirun</executable>
     </mpirun>
+    <mpirun mpilib="mpi-serial">
+      <executable></executable>
+    </mpirun>
+    <mpirun mpilib="impi">
+      <executable>mpirun</executable>
+    </mpirun>
     <module_system type="module">
       <init_path lang="python">/cluster/installations/lmod/lmod/init/env_modules_python.py</init_path>
+      <init_path lang="perl">/cluster/installations/lmod/lmod/init/perl</init_path>
       <init_path lang="sh">/cluster/installations/lmod/lmod/init/sh</init_path>
+      <init_path lang="csh">/cluster/installations/lmod/lmod/init/csh</init_path>
+      <cmd_path lang="perl">/cluster/installations/lmod/lmod/libexec/lmod perl</cmd_path>
       <cmd_path lang="python">/cluster/installations/lmod/lmod/libexec/lmod python</cmd_path>
       <cmd_path lang="sh">module</cmd_path>
+      <cmd_path lang="csh">module</cmd_path>
       <modules>
+        <command name="--force purge"></command>
         <command name="load">StdEnv</command>
         <command name="load">CMake/3.22.1-GCCcore-11.2.0</command>
         <command name="load">XML-LibXML/2.0207-GCCcore-11.2.0</command>
@@ -133,8 +144,10 @@ This allows using a different mpirun command to launch unit tests -->
       </modules>
     </module_system>
     <environment_variables>
+      <env name="LMOD_DISABLE_SAME_NAME_AUTOSWAP">off</env>
       <env name="KMP_STACKSIZE">256M</env>
-      <env name="I_MPI_EXTRA_FILESYSTEM_LIST">lustre</env>
+      <env name="I_MPI_EXTRA_FILESYSTEM_FORCE">lustre</env>
+      <env name="I_MPI_DEBUG">6,pid,time,line,file,</env>
       <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
       <env name="ESMFMKFILE">/cluster/software/ESMF/8.2.0-intel-2021b/lib/esmf.mk</env>
       <env name="ESMF_LIBDIR">/cluster/software/ESMF/8.2.0-intel-2021b/lib</env>
