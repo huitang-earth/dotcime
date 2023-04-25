@@ -100,5 +100,31 @@ using a fortran linker.
       <append>-mkl=sequential -lnetcdff -lnetcdf</append>
     </SLIBS>
   </compiler>
+  
+    <compiler MACH="puhti">
+    <CPPDEFS>
+      <append> -D$(OS) </append>
+    </CPPDEFS>
+    <FFLAGS>
+      <append> -xCORE-AVX2 -no-fma </append>
+    </FFLAGS>
+    <NETCDF_C_PATH>$(NETCDF_C_INSTALL_ROOT)</NETCDF_C_PATH>
+    <NETCDF_FORTRAN_PATH>$(NETCDF_FORTRAN_INSTALL_ROOT)</NETCDF_FORTRAN_PATH>
+    <PNETCDF_PATH>$(PARALLEL_NETCDF_INSTALL_ROOT)</PNETCDF_PATH>
+    <MPI_PATH>$(OPENMPI_INSTALL_ROOT)</MPI_PATH>
+    <MPI_LIB_NAME>mpi</MPI_LIB_NAME>
+    <FFLAGS>
+      <append DEBUG="FALSE"> -O2 </append>
+      <append MODEL="micom"> -r8 </append>
+      <append MODEL="cam"> -init=zero,arrays </append>
+    </FFLAGS>
+    <MPICC> mpiicc </MPICC>
+    <MPICXX> mpiicpc </MPICXX>
+    <MPIFC> mpiifort </MPIFC>
+    <PIO_FILESYSTEM_HINTS>lustre</PIO_FILESYSTEM_HINTS>
+    <SLIBS>
+      <append>-mkl=sequential -lnetcdff -lnetcdf</append>
+    </SLIBS>
+  </compiler>
 
 </config_compilers>

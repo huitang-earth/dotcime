@@ -158,5 +158,62 @@ This allows using a different mpirun command to launch unit tests -->
       <resource name="RLIMIT_STACK">-1</resource>
     </resource_limits>
   </machine>
+  
+  <machine MACH="puhti">
+    <DESC>Atos BullSequana X400 cluster based on Intel CPUs</DESC>
+    <NODENAME_REGEX>$HOSTNAME</NODENAME_REGEX>
+    <OS>LINUX</OS>
+    <COMPILERS>intel</COMPILERS>
+    <MPILIBS>mpt,openmpi</MPILIBS>
+    <CIME_OUTPUT_ROOT>/fmi/scratch/project_2006422/ctsm</CIME_OUTPUT_ROOT>
+    <DIN_LOC_ROOT>/fmi/projappl/project_2006422/FiON_input/inputdata</DIN_LOC_ROOT>
+    <DIN_LOC_ROOT_CLMFORC>/fmi/projappl/project_2006422/inputdata/atm/datm7</DIN_LOC_ROOT_CLMFORC>
+    <DOUT_S_ROOT>/fmi/scratch/project_2006422/archive/$CASE</DOUT_S_ROOT>
+    <BASELINE_ROOT>UNSET</BASELINE_ROOT>
+    <CCSM_CPRNC>UNSET</CCSM_CPRNC>
+    <GMAKE_J>8</GMAKE_J>
+    <BATCH_SYSTEM>slurm</BATCH_SYSTEM>
+    <SUPPORTED_BY>FMI-Hui Tang</SUPPORTED_BY>
+    <MAX_TASKS_PER_NODE>40</MAX_TASKS_PER_NODE>
+    <MAX_MPITASKS_PER_NODE>40</MAX_MPITASKS_PER_NODE>
+    <PROJECT_REQUIRED>TRUE</PROJECT_REQUIRED>
+    <mpirun mpilib="default">
+      <executable>srun</executable>
+    </mpirun>
+    <mpirun mpilib="mpi-serial">
+      <executable></executable>
+    </mpirun>
+    <mpirun mpilib="impi">
+      <executable>srun</executable>
+    </mpirun>
+    <module_system type="module">
+      <modules>
+        <command name="--force purge"></command>
+        <command name="load">intel-oneapi-compilers-classic/2021.6.0</command>
+        <command name="load">intel-oneapi-mpi/2021.6.0</command>
+        <command name="load">intel-oneapi-mkl/2022.1.0</command>
+        <command name="load">netcdf-fortran/4.5.4</command>
+        <command name="load">netcdf-c/4.8.1</command>
+        <command name="load">parallel-netcdf/1.12.2</command>
+        <command name="load">python-data/3.8-22.10</command>
+        <command name="load">perl/5.34.1</command>       
+      </modules>
+    </module_system>
+    <environment_variables>
+      <env name="LMOD_DISABLE_SAME_NAME_AUTOSWAP">off</env>
+      <env name="KMP_STACKSIZE">256M</env>
+      <env name="I_MPI_EXTRA_FILESYSTEM_FORCE">lustre</env>
+      <env name="I_MPI_DEBUG">6,pid,time,line,file,</env>
+      <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
+      <env name="ESMFMKFILE">/fmi/projappl/project_2006422/esmf/lib/libO/Linux.gfortran.64.mpiuni.default/esmf.mk</env>
+      <env name="ESMF_LIBDIR">/fmi/projappl/project_2006422/esmf/lib/libO/Linux.gfortran.64.mpiuni.default</env>
+      <env name="ESMF_RUNTIME_PROFILE">ON</env>
+      <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
+    </environment_variables>
+    <resource_limits>
+      <resource name="RLIMIT_STACK">-1</resource>
+    </resource_limits>
+  </machine>
+  
 
 </config_machines>
