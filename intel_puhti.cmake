@@ -9,7 +9,7 @@ set(SCC "icc")
 set(SCXX "icpc")
 set(SFC "ifort")
 
-set(MPI_LIB_NAME "impi")
+set(MPI_LIB_NAME "pmi2")
 
 set(NETCDF_C_PATH $ENV{NETCDF_C_INSTALL_ROOT})
 
@@ -21,8 +21,8 @@ set(NETCDF_FORTRAN_PATH $ENV{NETCDF_FORTRAN_INSTALL_ROOT})
 
 set(PIO_FILESYSTEM_HINTS "lustre")
 
-if (MPILIB STREQUAL impi)
-	string(APPEND SLIBS " -mkl=cluster  -lnetcdff -lnetcdf")
+if (MPILIB STREQUAL pmi2)
+	string(APPEND SLIBS " -mkl=cluster  -lnetcdff -lnetcdf -lpmi -L$ENV{MKLROOT} -lmkl_rt")
 endif()
 
 

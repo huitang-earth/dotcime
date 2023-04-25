@@ -164,7 +164,7 @@ This allows using a different mpirun command to launch unit tests -->
     <NODENAME_REGEX>$HOSTNAME</NODENAME_REGEX>
     <OS>LINUX</OS>
     <COMPILERS>intel</COMPILERS>
-    <MPILIBS>mpt,openmpi</MPILIBS>
+    <MPILIBS>pmi2</MPILIBS>
     <CIME_OUTPUT_ROOT>/fmi/scratch/project_2006422/ctsm</CIME_OUTPUT_ROOT>
     <DIN_LOC_ROOT>/fmi/projappl/project_2006422/FiON_input/inputdata</DIN_LOC_ROOT>
     <DIN_LOC_ROOT_CLMFORC>/fmi/projappl/project_2006422/inputdata/atm/datm7</DIN_LOC_ROOT_CLMFORC>
@@ -183,7 +183,7 @@ This allows using a different mpirun command to launch unit tests -->
     <mpirun mpilib="mpi-serial">
       <executable></executable>
     </mpirun>
-    <mpirun mpilib="impi">
+    <mpirun mpilib="pmi2">
       <executable>srun</executable>
     </mpirun>
     <module_system type="module">
@@ -205,8 +205,8 @@ This allows using a different mpirun command to launch unit tests -->
       <env name="I_MPI_EXTRA_FILESYSTEM_FORCE">lustre</env>
       <env name="I_MPI_DEBUG">6,pid,time,line,file,</env>
       <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
-      <env name="ESMFMKFILE">/fmi/projappl/project_2006422/esmf/lib/libO/Linux.gfortran.64.mpiuni.default/esmf.mk</env>
-      <env name="ESMF_LIBDIR">/fmi/projappl/project_2006422/esmf/lib/libO/Linux.gfortran.64.mpiuni.default</env>
+      <env name="ESMFMKFILE">/fmi/projappl/project_2006422/esmf_ifort/lib/libO/Linux.intel.64.mpiuni.default/esmf.mk</env>
+      <env name="ESMF_LIBDIR">/fmi/projappl/project_2006422/esmf_ifort/lib/libO/Linux.intel.64.mpiuni.default</env>
       <env name="ESMF_RUNTIME_PROFILE">ON</env>
       <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
     </environment_variables>
