@@ -15,9 +15,9 @@ set(NETCDF_C_PATH $ENV{NETCDF_C_INSTALL_ROOT})
 
 set(NETCDF_FORTRAN_PATH $ENV{NETCDF_FORTRAN_INSTALL_ROOT})
 
-#set(PNETCDF_PATH $ENV{PARALLEL_NETCDF_INSTALL_ROOT})
+set(PNETCDF_PATH $ENV{PARALLEL_NETCDF_INSTALL_ROOT})
 
-#set(ESMF_LIBDR "/fmi/projappl/project_2006422/esmf_ifort/lib/libO/Linux.intel.64.mpiuni.default")
+set(ESMF_LIBDR "/fmi/projappl/project_2006422/esmf_ifort_v8.4.1")
 
 set(PIO_FILESYSTEM_HINTS "lustre")
 
