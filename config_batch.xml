@@ -47,8 +47,6 @@
     <batch_mail_type>none, all, begin, end, fail</batch_mail_type>
     <directives>
       <directive> --job-name={{ job_id }}</directive>
-      <directive> --nodes={{ num_nodes }}</directive>
-      <directive> --ntasks-per-node={{ tasks_per_node }}</directive>
       <directive> --output={{ job_id }}</directive>
     </directives>
   </batch_system>
@@ -127,10 +125,10 @@
       <directive> --ntasks={{ total_tasks }}</directive>
       <directive> --export=ALL</directive>
       <directive> --switches=1</directive>
-      <directive> --mem-per-cpu=4G</directive>
+      <directive> --mem-per-cpu=4000</directive>
     </directives>
     <queues>
-      <queue walltimemax="02:00:00" nodemin="1" nodemax="40" default="true">small</queue>
+      <queue walltimemax="02:00:00" nodemin="1" nodemax="40" default="true">fmi</queue>
     </queues>
   </batch_system>
   
