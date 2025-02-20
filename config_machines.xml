@@ -47,7 +47,6 @@ unit_testing: can be 'true' or 'false'.
 This allows using a different mpirun command to launch unit tests -->
   <machine MACH="fram">
     <DESC>Lenovo NeXtScale M5, 32-way nodes, dual 16-core Xeon E5-2683@2.10GHz, 64 GiB per node, os is Linux, batch system is SLURM</DESC>
-    <NODENAME_REGEX>$HOSTNAME</NODENAME_REGEX>
     <OS>LINUX</OS>
     <COMPILERS>intel</COMPILERS>
     <MPILIBS>impi, mpi-serial</MPILIBS>
@@ -101,7 +100,6 @@ This allows using a different mpirun command to launch unit tests -->
 
   <machine MACH="saga">
     <DESC>Hewlett Packard Enterprise - CentOS Linux release 7.6.1810 (Core)</DESC>
-    <NODENAME_REGEX>$HOSTNAME</NODENAME_REGEX>
     <OS>LINUX</OS>
     <COMPILERS>intel</COMPILERS>
     <MPILIBS>impi</MPILIBS>
@@ -161,14 +159,13 @@ This allows using a different mpirun command to launch unit tests -->
   
   <machine MACH="puhti">
     <DESC>Atos BullSequana X400 cluster based on Intel CPUs</DESC>
-    <NODENAME_REGEX>$HOSTNAME</NODENAME_REGEX>
     <OS>LINUX</OS>
     <COMPILERS>intel</COMPILERS>
     <MPILIBS>pmi2</MPILIBS>
-    <CIME_OUTPUT_ROOT>/fmi/scratch/project_2006422/ctsm</CIME_OUTPUT_ROOT>
-    <DIN_LOC_ROOT>/fmi/projappl/project_2006422/FiON_input/inputdata</DIN_LOC_ROOT>
-    <DIN_LOC_ROOT_CLMFORC>/fmi/projappl/project_2006422/FiON_input/inputdata/atm/datm7</DIN_LOC_ROOT_CLMFORC>
-    <DOUT_S_ROOT>/fmi/scratch/project_2006422/archive/$CASE</DOUT_S_ROOT>
+    <CIME_OUTPUT_ROOT>/scratch/project_2007574/hui_tmp/ctsm</CIME_OUTPUT_ROOT>
+    <DIN_LOC_ROOT>/scratch/project_2007574/hui_tmp/FiON</DIN_LOC_ROOT>
+    <DIN_LOC_ROOT_CLMFORC>/scratch/project_2007574/hui_tmp/FiON/atm/datm7</DIN_LOC_ROOT_CLMFORC>
+    <DOUT_S_ROOT>/scratch/project_2007574/hui_tmp/archive/$CASE</DOUT_S_ROOT>
     <BASELINE_ROOT>UNSET</BASELINE_ROOT>
     <CCSM_CPRNC>UNSET</CCSM_CPRNC>
     <GMAKE_J>8</GMAKE_J>

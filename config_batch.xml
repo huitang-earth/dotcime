@@ -117,9 +117,9 @@
   <batch_system MACH="puhti" type="slurm">
     <batch_submit>sbatch</batch_submit>
     <submit_args>
-      <arg flag="--time" name="$JOB_WALLCLOCK_TIME" />
-      <arg flag="--partition" name="$JOB_QUEUE" />
-      <arg flag="--account" name="$PROJECT" />
+      <argument> --time $JOB_WALLCLOCK_TIME </argument>
+      <argument> --partition $JOB_QUEUE" </argument>
+      <argument> --account $PROJECT" </argument>
     </submit_args>
     <directives>
       <directive> --ntasks={{ total_tasks }}</directive>
