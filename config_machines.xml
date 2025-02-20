@@ -160,7 +160,7 @@ This allows using a different mpirun command to launch unit tests -->
   <machine MACH="puhti">
     <DESC>Atos BullSequana X400 cluster based on Intel CPUs</DESC>
     <OS>LINUX</OS>
-    <COMPILERS>intel</COMPILERS>
+    <COMPILERS>gnu</COMPILERS>
     <MPILIBS>pmi2</MPILIBS>
     <CIME_OUTPUT_ROOT>/scratch/project_2007574/hui_tmp/ctsm</CIME_OUTPUT_ROOT>
     <DIN_LOC_ROOT>/scratch/project_2007574/hui_tmp/FiON</DIN_LOC_ROOT>
@@ -193,14 +193,13 @@ This allows using a different mpirun command to launch unit tests -->
       <cmd_path lang="sh">module</cmd_path>
       <cmd_path lang="csh">module</cmd_path>
       <modules>
-        <command name="--force purge"></command>
-        <command name="load">intel-oneapi-compilers-classic/2021.6.0</command>
-        <command name="load">intel-oneapi-mpi/2021.6.0</command>
-        <command name="load">intel-oneapi-mkl/2022.1.0</command>
-        <command name="load">netcdf-fortran/4.5.4</command>
-        <command name="load">netcdf-c/4.8.1</command>
-        <command name="load">parallel-netcdf/1.12.2</command>
-        <command name="load">python-data/3.8-22.10</command>
+	<command name="--force purge"></command>
+        <command name="load">gcc/13.2.0</command>
+        <command name="load">openmpi/5.0.5</command>
+        <command name="load">netcdf-fortran/4.6.1</command>
+        <command name="load">netcdf-c/4.9.2</command>
+	<command name="load">parallel-netcdf/1.12.3</command>
+	<command name="load">intel-oneapi-mkl/2024.0.0</command>
         <command name="load">perl/5.34.1</command>       
       </modules>
     </module_system>
@@ -210,8 +209,8 @@ This allows using a different mpirun command to launch unit tests -->
       <env name="I_MPI_EXTRA_FILESYSTEM_FORCE">lustre</env>
       <env name="I_MPI_DEBUG">6,pid,time,line,file,</env>
       <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
-      <env name="ESMFMKFILE">/fmi/projappl/project_2006422/esmf_ifort_v8.4.1/lib/libO/Linux.intel.64.mpiuni.default/esmf.mk</env>
-      <env name="ESMF_LIBDIR">/fmi/projappl/project_2006422/esmf_ifort_v8.4.1/lib/libO/Linux.intel.64.mpiuni.default</env>
+      <env name="ESMFMKFILE">/fmi/projappl/project_2006422/esmf_gfortran_v8.8.0/lib/libO/Linux.gfortran.64.mpiuni.default/esmf.mk</env>
+      <env name="ESMF_LIBDIR">/fmi/projappl/project_2006422/esmf_gfortran_v8.8.0/lib/libO/Linux.gfortran.64.mpiuni.default</env>
       <env name="ESMF_RUNTIME_PROFILE">ON</env>
       <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
     </environment_variables>

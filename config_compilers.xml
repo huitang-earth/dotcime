@@ -118,9 +118,9 @@ using a fortran linker.
       <append MODEL="micom"> -r8 </append>
       <append MODEL="cam"> -init=zero,arrays </append>
     </FFLAGS>
-    <MPICC> mpiicc </MPICC>
-    <MPICXX> mpiicpc </MPICXX>
-    <MPIFC> mpiifort </MPIFC>
+    <MPICC> mpicc </MPICC>
+    <MPICXX> mpicxx </MPICXX>
+    <MPIFC> mpif90 </MPIFC>
     <PIO_FILESYSTEM_HINTS>lustre</PIO_FILESYSTEM_HINTS>
     <SLIBS>
       <append>-mkl=sequential -lnetcdff -lnetcdf</append>
