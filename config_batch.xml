@@ -118,14 +118,14 @@
     <batch_submit>sbatch</batch_submit>
     <submit_args>
       <argument> --time $JOB_WALLCLOCK_TIME </argument>
-      <argument> --partition $JOB_QUEUE" </argument>
-      <argument> --account $PROJECT" </argument>
+      <argument> --partition $JOB_QUEUE </argument>
+      <argument> --account $PROJECT </argument>
     </submit_args>
     <directives>
       <directive> --ntasks={{ total_tasks }}</directive>
       <directive> --export=ALL</directive>
       <directive> --switches=1</directive>
-      <directive> --mem-per-cpu=4000</directive>
+      <directive> --mem-per-cpu=8000</directive>
     </directives>
     <queues>
       <queue walltimemax="02:00:00" nodemin="1" nodemax="40" default="true">fmi</queue>

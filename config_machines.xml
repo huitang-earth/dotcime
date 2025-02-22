@@ -209,8 +209,8 @@ This allows using a different mpirun command to launch unit tests -->
       <env name="I_MPI_EXTRA_FILESYSTEM_FORCE">lustre</env>
       <env name="I_MPI_DEBUG">6,pid,time,line,file,</env>
       <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
-      <env name="ESMFMKFILE">/fmi/projappl/project_2006422/esmf_gfortran_v8.8.0/lib/libO/Linux.gfortran.64.mpiuni.default/esmf.mk</env>
-      <env name="ESMF_LIBDIR">/fmi/projappl/project_2006422/esmf_gfortran_v8.8.0/lib/libO/Linux.gfortran.64.mpiuni.default</env>
+      <env name="ESMFMKFILE">/projappl/project_2006422/esmf_gfortran_v8.8.0/lib/libO/Linux.gfortran.64.openmpi.default/esmf.mk</env>
+      <env name="ESMF_LIBDIR">/projappl/project_2006422/esmf_gfortran_v8.8.0/lib/libO/Linux.gfortran.64.openmpi.default</env>
       <env name="ESMF_RUNTIME_PROFILE">ON</env>
       <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
     </environment_variables>
