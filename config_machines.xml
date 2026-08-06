@@ -157,22 +157,22 @@ This allows using a different mpirun command to launch unit tests -->
     </resource_limits>
   </machine>
   
-  <machine MACH="puhti">
+  <machine MACH="roihu">
     <DESC>Atos BullSequana X400 cluster based on Intel CPUs</DESC>
     <OS>LINUX</OS>
     <COMPILERS>gnu</COMPILERS>
     <MPILIBS>pmi2</MPILIBS>
-    <CIME_OUTPUT_ROOT>/scratch/project_2007574/hui_tmp/ctsm</CIME_OUTPUT_ROOT>
-    <DIN_LOC_ROOT>/scratch/project_2007574/hui_tmp/FiON</DIN_LOC_ROOT>
-    <DIN_LOC_ROOT_CLMFORC>/scratch/project_2007574/hui_tmp/FiON/atm/datm7</DIN_LOC_ROOT_CLMFORC>
-    <DOUT_S_ROOT>/scratch/project_2007574/hui_tmp/archive/$CASE</DOUT_S_ROOT>
+    <CIME_OUTPUT_ROOT>/scratch/project_2020169/ctsm</CIME_OUTPUT_ROOT>
+    <DIN_LOC_ROOT>/scratch/project_2020169/FiON</DIN_LOC_ROOT>
+    <DIN_LOC_ROOT_CLMFORC>/scratch/project_2020169/FiON/atm/datm7</DIN_LOC_ROOT_CLMFORC>
+    <DOUT_S_ROOT>/scratch/project_2020169/archive/$CASE</DOUT_S_ROOT>
     <BASELINE_ROOT>UNSET</BASELINE_ROOT>
     <CCSM_CPRNC>UNSET</CCSM_CPRNC>
     <GMAKE_J>8</GMAKE_J>
     <BATCH_SYSTEM>slurm</BATCH_SYSTEM>
     <SUPPORTED_BY>FMI-Hui Tang</SUPPORTED_BY>
-    <MAX_TASKS_PER_NODE>40</MAX_TASKS_PER_NODE>
-    <MAX_MPITASKS_PER_NODE>40</MAX_MPITASKS_PER_NODE>
+    <MAX_TASKS_PER_NODE>384</MAX_TASKS_PER_NODE>
+    <MAX_MPITASKS_PER_NODE>384</MAX_MPITASKS_PER_NODE>
     <PROJECT_REQUIRED>TRUE</PROJECT_REQUIRED>
     <mpirun mpilib="default">
       <executable>srun</executable>
@@ -194,13 +194,11 @@ This allows using a different mpirun command to launch unit tests -->
       <cmd_path lang="csh">module</cmd_path>
       <modules>
 	<command name="--force purge"></command>
-        <command name="load">gcc/13.2.0</command>
-        <command name="load">openmpi/5.0.5</command>
-        <command name="load">netcdf-fortran/4.6.1</command>
-        <command name="load">netcdf-c/4.9.2</command>
-	<command name="load">parallel-netcdf/1.12.3</command>
-	<command name="load">intel-oneapi-mkl/2024.0.0</command>
-        <command name="load">perl/5.34.1</command>       
+        <command name="load">gcc/15.2.0</command>
+        <command name="load">openmpi/5.0.10</command>
+        <command name="load">netcdf-fortran/4.6.2</command>
+        <command name="load">netcdf-c/4.9.3</command>
+	<command name="load">parallel-netcdf/1.14.1</command>
       </modules>
     </module_system>
     <environment_variables>
@@ -209,8 +207,8 @@ This allows using a different mpirun command to launch unit tests -->
       <env name="I_MPI_EXTRA_FILESYSTEM_FORCE">lustre</env>
       <env name="I_MPI_DEBUG">6,pid,time,line,file,</env>
       <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
-      <env name="ESMFMKFILE">/projappl/project_2006422/esmf_gfortran_v8.8.0/lib/libO/Linux.gfortran.64.openmpi.default/esmf.mk</env>
-      <env name="ESMF_LIBDIR">/projappl/project_2006422/esmf_gfortran_v8.8.0/lib/libO/Linux.gfortran.64.openmpi.default</env>
+      <env name="ESMFMKFILE">/projappl/project_2020169/esmf_gfortran_v8.9.1/lib/libO/Linux.gfortran.64.openmpi.default/esmf.mk</env>
+      <env name="ESMF_LIBDIR">/projappl/project_2020169/esmf_gfortran_v8.9.1/lib/libO/Linux.gfortran.64.openmpi.default</env>
       <env name="ESMF_RUNTIME_PROFILE">ON</env>
       <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
     </environment_variables>

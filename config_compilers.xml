@@ -101,7 +101,7 @@ using a fortran linker.
     </SLIBS>
   </compiler>
   
-    <compiler MACH="puhti">
+    <compiler MACH="roihu">
     <CPPDEFS>
       <append> -D$(OS) </append>
     </CPPDEFS>

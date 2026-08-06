@@ -114,7 +114,7 @@
     </queues>
   </batch_system>
   
-  <batch_system MACH="puhti" type="slurm">
+  <batch_system MACH="roihu" type="slurm">
     <batch_submit>sbatch</batch_submit>
     <submit_args>
       <argument> --time $JOB_WALLCLOCK_TIME </argument>
