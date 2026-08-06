@@ -128,7 +128,7 @@
       <directive> --mem-per-cpu=8000</directive>
     </directives>
     <queues>
-      <queue walltimemax="02:00:00" nodemin="1" nodemax="40" default="true">fmi</queue>
+      <queue walltimemax="02:00:00" nodemin="1" nodemax="384" default="true">small</queue>
     </queues>
   </batch_system>
   
